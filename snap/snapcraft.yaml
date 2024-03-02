@@ -1,0 +1,40 @@
+name: haproxy-downthepark
+version: '2.4.22'
+summary: Fast and reliable load balancing reverse proxy
+description: |
+  Fast and reliable load balancing reverse proxy
+
+base: core22
+grade: stable
+confinement: strict
+
+apps:
+  haproxy:
+    command: usr/sbin/haproxy -Ws -f $SNAP_DATA/haproxy.cfg
+    start-timeout: 30s
+    daemon: simple
+    restart-condition: always
+    plugs: [network, network-bind]
+
+hooks:
+  install:
+    command-chain:
+      - snap/command-chain/install.sh
+
+parts:
+  haproxy:
+    plugin: nil
+    stage-packages:
+      - haproxy
+    override-prime: |
+      craftctl default
+      rm -f etc/haproxy/haproxy.cfg
+      rm -rf lib
+      rm -rf usr/share
+      rm -rf var
+  local:
+    after: [haproxy]
+    plugin: dump
+    source-type: local
+    source: snap/local
+
