@@ -1,4 +1,4 @@
-name: haproxy-downthepark
+name: haproxy-dtp
 version: '2.4.22'
 summary: Fast and reliable load balancing reverse proxy
 description: |
