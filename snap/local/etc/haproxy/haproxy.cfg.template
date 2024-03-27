@@ -17,11 +17,11 @@ global
         ssl-default-bind-options ssl-min-ver TLSv1.2 no-tls-tickets
 
 defaults
-	#log	global
 	mode	http
-	option	httplog
-	option	dontlognull
-        timeout connect 5000
+        #log    global
+	#option	httplog
+	#option	dontlognull
+	timeout connect 5000
         timeout client  50000
         timeout server  50000
 	errorfile 400 "$SNAP_DATA"/errors/400.http
