@@ -1,7 +1,7 @@
 # HAProxy Snap
 [![haproxy](https://snapcraft.io/haproxy-dtp/badge.svg)](https://snapcraft.io/haproxy-dtp)
 
-This is a simple community-developed [HAProxy](https://github.com/haproxy/haproxy) snap, which is a repackage of the HAProxy package from the Ubuntu package repository.
+This is a community-developed [HAProxy](https://github.com/haproxy/haproxy) snap, made by repackaging the HAProxy package from the Ubuntu package repository with minor modifications.
 
 ## Features
 - Strict confinement
