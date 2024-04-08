@@ -1,6 +1,5 @@
 global
         setenv SNAP_DATA _SNAP_DATA_
-        #log 127.0.0.1:514 local0
         stats socket "$SNAP_DATA"/run/admin.sock mode 660 level admin expose-fd listeners
 	stats timeout 30s
 	user root
@@ -18,9 +17,6 @@ global
 
 defaults
 	mode	http
-        #log    global
-	#option	httplog
-	#option	dontlognull
 	timeout connect 5000
         timeout client  50000
         timeout server  50000
